@@ -1,0 +1,105 @@
+buyer 44383
+seller 44397
+Account 44378 
+Ocelot 44300
+
+> docker run -d -p 44300:80 --name OcelotAPIGateWay ocelotapigateway:latest
+> docker run -d -p 44383:80 --name BuyerWebAPI buyerwebapi:latest
+> docker run -d -p 44397:80 --name SellerWebAPI sellerwebapi:latest
+> docker run -d -p 44378:80 --name AuthenticationWebAPI authenticationwebapi:latest
+> docker run -d -p 44044:80 --name eAuction eauction:latest
+
+> docker pull mongo:latest
+> docker run --name mongodb -d -p 2717:27017 mongo:latest
+> docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:latest
+> docker network create --driver bridge mongo_db
+
+> docker run -d -p 2717:27017 --net=mongo_db --name mongodb mongo
+
+
+docker run -d -p 30383:80 --name BuyerWebAPI buyerwebapi:latest
+docker run -d -p 30397:80 --name SellerWebAPI sellerwebapi:latest
+docker run -d -p 30378:80 --name AuthenticationWebAPI authenticationwebapi:latest
+docker run -d -p 30044:80 --name eAuction eauction:latest
+
+docker build -t aspnetcorewebapiimage -f Dockerfile .
+docker run -d -p 8582:80 --name demoaspnetcorewebapicontainer demoaspnetcorewebapiimage
+
+curl -X 'GET' 'http://localhost:8582/WeatherForecast' -H 'accept: text/plain'
+
+docker stop anotherdemoaspnetcorewebapicontainer
+docker rm anotherdemoaspnetcorewebapicontainer
+
+
+docker ps 
+
+-----------------
+> kubectl get all
+> kubectl delete all --all --all-namespaces
+> kubectl apply -f <filename>.yaml
+
+------
+Dockerhub
+> docker logout
+> docker login
+
+> docker tag eauction navjyotgurhale0/eauction:latest
+> docker push navjyotgurhale0/eauction:latest
+
+> docker tag authenticationwebapi navjyotgurhale0/authenticationwebapi:latest
+> docker tag push navjyotgurhale0/authenticationwebapi:latest
+
+> docker tag buyerwebapi navjyotgurhale0/buyerwebapi:latest
+> docker tag push navjyotgurhale0/buyerwebapi:latest
+
+> docker tag buyerwebapi navjyotgurhale0/sellerwebapi:latest
+> docker tag push navjyotgurhale0/sellerwebapi:latest
+
+--------
+AWS
+-----
+(login)
+> aws configure
+
+[
+AWS Access Key ID [None]: **************
+AWS Secret Access Key [None]: **************
+Default region name [None]: <us-east-1>
+Default output format [None]: json
+]
+
+(s3 list)
+> aws s3 ls
+
+(logout)
+> rm ~/.aws/config
+> rm ~/.aws/credentials
+> 
+-----------------------------
+sudo su
+
+docker build -t authenticationwebapi -f AuthenticationWebApi/Dockerfile .
+docker build -t buyerwebapi -f BuyerWebApi/Dockerfile .
+docker build -t sellerwebapi -f SellerWebApi/Dockerfile .
+docker build -t eauctionui -f Dockerfile .
+
+docker run -d -p 30383:80 --name BuyerWebAPI buyerwebapi
+docker run -d -p 30397:80 --name SellerWebAPI sellerwebapi
+docker run -d -p 30378:80 --name AuthenticationWebAPI authenticationwebapi
+docker run -d -p 30044:80 --name eAuction navjyotgurhale0/eauction:latest
+
+docker rm `docker ps --no-trunc -aq`
+
+docker stop BuyerWebAPI
+docker rm BuyerWebAPI
+
+docker stop SellerWebAPI
+docker rm SellerWebAPI
+
+docker stop AuthenticationWebAPI
+docker rm AuthenticationWebAPI
+
+docker stop eAuction
+docker rm eAuction
+
+docker image rm image navjyotgurhale0/eauction

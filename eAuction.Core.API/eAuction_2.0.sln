@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32802.440
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTAuthenticationManager", "JWTAuthenticationManager\JWTAuthenticationManager.csproj", "{5B1040B0-65B4-4123-A412-44FE48FBE68D}"
 EndProject
@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuyerWebApi", "BuyerWebApi\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationWebApi", "AuthenticationWebApi\AuthenticationWebApi.csproj", "{E35DF751-5593-4196-9D21-3F80EE72DC8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGateway", "OcelotApiGateway\OcelotApiGateway.csproj", "{45F286A6-08C6-4045-AF0A-9B144B4153EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGateway", "OcelotApiGateway\OcelotApiGateway.csproj", "{45F286A6-08C6-4045-AF0A-9B144B4153EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SellerWebApi", "SellerWebApi\SellerWebApi.csproj", "{3E8E78C9-0C3E-4809-AB6E-4BC9F832AA03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SellerWebApi", "SellerWebApi\SellerWebApi.csproj", "{3E8E78C9-0C3E-4809-AB6E-4BC9F832AA03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAucion.UnitTests", "eAucion.UnitTests\eAucion.UnitTests.csproj", "{CEB49537-7315-4E36-9663-968197D0B77E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{3E8E78C9-0C3E-4809-AB6E-4BC9F832AA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E8E78C9-0C3E-4809-AB6E-4BC9F832AA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E8E78C9-0C3E-4809-AB6E-4BC9F832AA03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB49537-7315-4E36-9663-968197D0B77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB49537-7315-4E36-9663-968197D0B77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB49537-7315-4E36-9663-968197D0B77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB49537-7315-4E36-9663-968197D0B77E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
